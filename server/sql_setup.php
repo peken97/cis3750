@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "password";
 $db = "cis3750";
 
 // Create connection
