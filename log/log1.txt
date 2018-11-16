@@ -1,0 +1,30 @@
+TestTest
+Test
+Test
+User 'petar@yahoo.com' does not exist
+User 'petar@yahoo.com' does not exist
+Query: INSERT INTO users (username, email, password, permission_type) VALUES (hfkjsdkfj, petar@yahoo.com, 213412312, 1)
+Result: 
+User 'petar@yahoo.com' does not exist
+Query: INSERT INTO users (username, email, password, permission_type) VALUES ('hfkjsdkfj', 'petar@yahoo.com', '213412312', 1)
+Result: 1
+User 'cmoffat@uoguelph.ca' does not exist
+Query: INSERT INTO users (username, email, password, permission_type) VALUES ('Sears', 'cmoffat@uoguelph.ca', 'password', 1)
+Result: 1
+User 'cmoffat@gmail.com' does not exist
+Query: INSERT INTO users (username, email, password, permission_type) VALUES ('Sears', 'cmoffat@gmail.com', 'hello', 1)
+Result: 1
+Attempting to make a directory for Sears
+Result for attempting to make a directory for Sears is [1]
+User '' does not exist
+Query: INSERT INTO advertisements (user_id, advertisement_name, file_name) VALUES (1, '321', 'desktop.ini')
+Result: 
+User '' does not exist
+Query: INSERT INTO advertisements (user_id, advertisement_name, file_name) VALUES (1, '321', 'desktop.ini')
+Result: 
+Query: INSERT INTO advertisements (user_id, advertisement_name, file_name) VALUES (1, '321', 'desktop.ini')
+Result: 
+Query: INSERT INTO advertisements (user_id, advertisement_name, file_name) VALUES (1, '321', 'desktop.ini')
+Result: 
+Query: INSERT INTO advertisements (user_id, advertisement_name, file_name) VALUES (1, '321', 'desktop.ini')
+Result: 1

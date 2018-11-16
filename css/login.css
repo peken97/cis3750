@@ -1,0 +1,8 @@
+#form_login{
+    width: 300px;
+    margin: 20vh auto;
+}
+#text_incorrect_login_info{
+    color: red;
+    padding: 10px;
+}

@@ -1,5 +1,10 @@
-#form_login{
-    width: 300px;
-    margin: 20vh auto;
+.clickable_link{
+    cursor: pointer;
+    color: white;
+}
+.clickable_link:hover{
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
     
 }
