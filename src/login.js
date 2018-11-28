@@ -7,10 +7,8 @@ var serverInformation = {
 sessionStorage.setItem("serverInformation", JSON.stringify(serverInformation));
 
 var loginInformation = {
-
     email: undefined,
     password: undefined
-
 }
 
 

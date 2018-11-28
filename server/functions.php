@@ -97,6 +97,9 @@ switch($action){
         echo get_username($constraint_name, $constraint_value);
 
     break;
+    case "delete_ad":
+        $advertisement_id = filter_input(INPUT_POST, "ad_id");
+        delete_advertisement($advertisement_id);
     default:
         echo $return_error;
     break;
@@ -131,7 +134,7 @@ function addNewAdvertisement($user_id, $advertisement_name, $file_name){
     global $return_success;
     global $return_error;
 
-    $query = "INSERT INTO {$table_advertisements} (user_id, advertisement_name, file_name) VALUES ({$user_id}, '{$advertisement_name}', '{$file_name}')";
+    $query = "INSERT INTO {$table_advertisements} (user_id, advertisement_name, file_name, ad_status) VALUES ({$user_id}, '{$advertisement_name}', '{$file_name}', 0)";
 
     writeToLog("Query: {$query}");
 
@@ -309,10 +312,53 @@ function attempt_login($email, $password){
     if($result->num_rows == 0){
         return FALSE;
     }
-    return TRUE;
-
-    
+    return TRUE;  
 }
 
+function getNextAdvertisementId() {
+    global $conn;
+    global $table_advertisements;
+
+    $query = "SELECT advertisement_id FROM {$table_advertisements} ORDER BY advertisement_id DESC LIMIT 1";
+
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+    return($row['advertisement_id']);
+}
+
+function delete_advertisement($ad_id) {
+    global $conn;
+    global $table_advertisements;
+    echo $ad_id;
+    $query = "DELETE FROM {$table_advertisements} WHERE advertisement_id='{$ad_id}'";
+    echo $query;
+    if($result = mysqli_query($conn, $query))
+    {
+        return true;
+    }
+    else 
+    {
+        return false;
+    }
+}
+
+function edit_advertisement($ad_id, $user_id, $ad_name, $ad_file_name){
+    global $conn;
+    global $table_advertisements;
+    //echo $ad_id;
+    echo "here";
+    $query = "UPDATE {$table_advertisements} 
+                SET advertisement_name = '{$ad_name}', file_name = '{$ad_file_name}'
+                WHERE advertisement_id = '{$ad_id}'";
+    echo $query;
+    if($result = mysqli_query($conn, $query))
+    {
+        return true;
+    }
+    else 
+    {
+        return false;
+    }
+}
 
 ?>

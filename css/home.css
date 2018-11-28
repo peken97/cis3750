@@ -8,3 +8,8 @@
     opacity: 0.8;
     
 }
+
+.ad_table img {
+	max-width: 50px;
+	max-height: 50px;
+}

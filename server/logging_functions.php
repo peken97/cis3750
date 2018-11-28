@@ -1,7 +1,7 @@
 <?php 
 
 
-function writeToLog($text){
+function  writeToLog($text){
 
     $filename = "../log/log1.txt";
 
